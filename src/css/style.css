@@ -1,0 +1,273 @@
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.chat-container {
+    display: flex;
+    /* display: none; */
+    flex-direction: row;
+    min-width: 900px;
+    max-width: 1200px;
+    min-height: 800px;
+    margin: 20px auto;
+  
+    border-radius: 3px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2);
+    
+    background: linear-gradient( #e2e2e2, transparent 1px), linear-gradient( 90deg, #e2e2e2, transparent 1px);
+    background-size: 18px 18px;
+    background-position: center center;
+    background-color: #f8f8f8;
+}
+
+/* Список пользователей чата */
+.user-panel-list {
+    box-sizing: border-box;
+    /* display: flex; */
+    /* display: none; */
+    flex-direction: column;
+    flex-wrap: nowrap;
+    
+    background-color: #ffffff;
+    border: 1px solid #c4c4c4;
+    border-radius: 11px;
+
+    margin: 50px 0 0 30px;
+
+
+    width: 300px;
+    height: 300px;
+    padding: 15px 0 15px 0;
+
+    text-align: center;
+    justify-content: flex-start;
+
+    overflow-y: auto;
+}
+
+.user {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+
+    width: 100%;
+    align-items: center;
+}
+
+li {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.user-completed {
+  display: inline-block;
+  border: 1px solid #c4c4c4;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  flex-shrink: 0;
+  text-align: center;
+  
+  margin-right: 5px;
+
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.completed:before {
+  display: block;
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: rgb(14, 13, 13);
+}
+
+.user-completed:hover {
+  box-shadow: 0px 0px 5px #7e7e7e;
+}
+
+.user-text {
+  flex-grow: 1;
+  max-width: 300px;
+  min-width: 50px;
+  margin-left: 0px;
+}
+
+.user-text-name {
+  margin-left: 5px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.user-text-name-you {
+  margin-left: 5px;
+  text-align: left;
+  cursor: pointer;
+  color: #f56868;;
+}
+
+/* Окно чата */
+.chat-window-container {
+  flex: 1;
+  display: flex;
+  /* display: none; */
+  flex-direction: column;
+  min-width: 500px;
+
+  height: 485px;
+
+  padding: 0 15px 15px 15px;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 11px;
+  border: 1px solid #c4c4c4;
+  font-size: 15px;
+
+  margin: 20px 150px 0 -25px;
+
+  z-index: 999;
+}
+
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  
+  height: 100%;
+  width: 100%;
+
+  overflow: auto;
+  scroll-behavior: smooth;
+
+  padding-bottom: 5px;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.chat-input {
+  height: 40px;
+  border-radius: 11px;
+  border: 1px solid #c4c4c4;
+}
+
+.chat-input::placeholder {
+  padding-left: 15px;
+}
+
+.chat-input:hover {
+  box-shadow: 0px 0px 3px #7e7e7e;
+}
+
+.chat-input:focus {
+  outline: none;
+  border: 2px solid #c7c6c6;
+}
+
+.chat-user-name-and-date-any {
+  color: #7e7e7e;
+  padding-top: 15px;
+  font-size: 12px;
+}
+
+.chat-user-name-and-date-you {
+  color: #f56868;
+  padding-top: 15px;
+  font-size: 12px;
+}
+
+.chat-messages-text {
+  padding-top: 7px;
+}
+
+.chat-messages-any {
+  align-self: flex-start;
+}
+
+.chat-messages-you {
+  align-self: flex-end;
+  text-align: right;
+  padding-right: 25px;
+}
+
+/* "Ввести логин"*/
+.choice-nickname-container {
+  display: block;
+  min-width: 350px;
+  width: 450px;
+  height: 175px;
+
+  background-color: rgb(255, 255, 255);
+  border-radius: 11px;
+  border: 1px solid #c4c4c4;
+  font-size: 15px;
+
+  z-index: 999;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.choice-nickname-header {
+  text-align: center;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.choice-nickname-error {
+  opacity: 0;
+  margin: 10px;
+  color: red;
+}
+
+.choice-nickname-textarea {
+  box-sizing: border-box;
+  width: calc(100% - 24px);
+
+  margin-left: 12px;
+  border: 1px solid #c4c4c4;
+  resize: none;
+
+  outline: none;
+}
+
+.choice-nickname-container-btn {
+  display: flex;
+  justify-content: center;
+  margin: 12px;
+}
+
+.btn-ok-choice-nickname-container {
+  height: 40px;
+  width: 220px;
+  /* margin: 10px; */
+  
+  background-color: rgb(255, 255, 255);
+  border-radius: 11px;
+  border: 1px solid #c4c4c4;
+  font-size: 15px;
+}
+
+.btn-ok-choice-nickname-container:hover {
+  box-shadow: 0px 0px 5px #7e7e7e;
+}
+
+.hidden {
+  display: none;
+}

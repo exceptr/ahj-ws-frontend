@@ -1,4 +1,4 @@
-import Login from "./login";
+import Login from "./Login";
 
 export default class Chat {
   constructor(parentEl, url) {
